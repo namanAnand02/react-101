@@ -279,5 +279,18 @@ const newElement7 = meet()
 
 // or we can directly call this function inside this render thingy 
 
-Reactroot3.render(meet())
+// Reactroot3.render(meet())
 
+
+
+// How do we add multiple react elements inside render thingy here 
+
+// say we want to render newElement6 and newElement7 together inside the render - how do we do that?
+
+
+// we can wrap them inside react fragment - <></> 
+
+
+Reactroot3.render(<>{greet()} {meet()}</>)
+
+// rem we are inserting js exprs (react component) inside of <></>, jsx hai ye --- hence we need to use {} to embed those js exprss
