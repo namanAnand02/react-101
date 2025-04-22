@@ -43,6 +43,10 @@ root.render(newElement)
 // Below is the right way 
 
 
+
+
+// ~~~~~~~~~~~~~~~~~~ PROPS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function Greet(props){
     return <h2> Hello world, {props.name}, {props.age} years old, earning {props.salary} rupees per month.</h2>
 }
@@ -103,7 +107,102 @@ the ques was how do we send multiple arguments in jsx function calls
 
 
 
+/*
 
+- props stands for properties 
+- they are used to pass data from a parent component to a child component. 
+
+- REAL WORLD ANALOGY 
+-- think of props as arguments to a function or attributes in HTML 
+
+-- <img src="dog.png" alt="a dog" />
+-- here src and alt are props for the <img/> tag
+-- in react, props works the same way
+
+
+
+// an exmaple --> 
+
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+const element = <Welcome name="Naman" />;
+ReactDOM.createRoot(document.getElementById("root")).render(element);
+
+
+// -- We are passing a prop name="Naman" to the Welcome component.
+
+// -- Inside the component, we use props.name to access it.
+
+
+
+
+// WHY PROPS? 
+- making components reusable 
+- keeping code clean and organized 
+- passing dynamic data to components 
+
+
+// common mistakes with props 
+
+- 1. forgetting to accept props in the function. 
+
+        function Greet() {  // Missing (props)
+            return <h1>{props.name}</h1>; // Error!
+        }
+
+
+- 2. Using props without passing it. 
+
+        function Greet(props) {
+            return <h1>Hello {props.name}</h1>;
+        }
+
+        const elem = <Greet />;  // props.name will be undefined
+
+
+
+// solution to above problems 
+
+- - use defualt values or checks 
+
+        function Greet(props) {
+            return <h1>Hello {props.name || "Guest"}</h1>; // default values or checks 
+        }
+
+
+
+
+// 
+
+// Best practice - Destructuring Props 
+
+// Destructuring props - cleaner syntax 
+
+        function Welcome({ name }) {
+            return <h1>Hello, {name}!</h1>;
+        }
+
+        <Welcome name="Naman" />
+
+
+// Destructuring props - passing multiple props 
+
+        function Profile({ name, age }) {
+            return (
+                    <div>
+                        <h1>Name: {name}</h1>
+                        <p>Age: {age}</p>
+                    </div>
+            );
+        }
+
+        <Profile name="Naman" age={23} />
+
+
+*/
 
 
 
