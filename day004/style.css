@@ -1,0 +1,8 @@
+#first{
+    background-color: pink;
+    color: red;
+}
+
+/* we could define style to the elements here using their id or class and then add this css file to index.html just like we normally do  */
+
+/* another way is we directly add styles to each of the elements inside jsx only  */

@@ -37,12 +37,15 @@ import ReactDOM from "react-dom/client"
 
 
 // using JSX - we can now directly add html codes into our codebase.
-// step1 : write html code using jsx 
-const newElement = <h1> hello from naman</h1>
-// step2: first select the root element from the html inside which we will add this new element. - give that root access to reactDOM - using reactDOM.createRoot(document.getElementById("root"))
-const ReactRoot2 = ReactDOM.createRoot(document.getElementById("root2"))
-// step 3: render that new element into that root element we selected 
-ReactRoot2.render(newElement)
+
+// // ->  step1 : write html code using jsx 
+// const newElement = <h1> hello from naman</h1>
+
+// // ->  step2: first select the root element from the html inside which we will add this new element. - give that root access to reactDOM - using reactDOM.createRoot(document.getElementById("root"))
+// const ReactRoot2 = ReactDOM.createRoot(document.getElementById("root2"))
+
+// // ->  step 3: render that new element into that root element we selected 
+// ReactRoot2.render(newElement)
 
  
 //                      React                           render 
@@ -83,3 +86,156 @@ ReactRoot2.render(newElement)
 // Helps tools like Parcel, Vite, or Webpack understand JSX and ES6 code ---- So browsers (which don’t understand JSX) can run it.
 
 // If you try to use JSX without Babel (or a bundler using Babel internally), you’ll get syntax errors, because browsers don’t understand JSX out of the box.
+
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// Now on, we wil only use jsx and not react.createElement()
+
+
+// next learning - how to add multiple elements inside jsx 
+
+// how JSX handles multiple sibling elements??
+// -------->  JSX expressions must have one parent element — just like HTML needs everything inside a single root.
+
+
+
+// ---> use brackets which only helps others understand - not necessary 
+// ---> we cant directly send multiple elements to render - throws error- render expects one element. 
+// ---> so wrap them together inside a div or Or use React Fragment to avoid adding an actual extra DOM node (even empty <></>)  
+
+
+
+
+// ---> <></> is called react fragment - used to avoid adding an actual extra DOM mode. 
+
+// JSX needs one parent element because:
+// ------> When Babel transpiles JSX, it expects a single React.createElement call at the top level.
+// ------> Multiple top-level elements break that expectation.
+
+
+
+
+
+
+
+// const newElement = (
+
+//     <div>
+//         <h1 id="first" className="firstclass" style={{color: "white", backgroundColor: "black"}}> hello from naman</h1>
+//         <h2> Jsx - adding multiple elems </h2>
+//     </div>
+    
+//     // OR 
+
+
+//     // <>
+//     //     <h1> hello from naman</h1>
+//     //     <h2> Jsx - adding multiple elems </h2>
+//     // </>
+
+
+
+//     // either wrap them around a new div element 
+//     // or use react fragment -> <></> when we dont want to use extra div element.
+
+//     // when we create single parent inside newElement, no prpb
+//     // when we create siblings, we have to wrap them inside div or react fragment.
+
+//     // brackets around them only enhances the readability of the code. 
+
+
+// )
+// const ReactRoot2 = ReactDOM.createRoot(document.getElementById("root2"))
+
+// ReactRoot2.render(newElement)
+
+
+// next thing, we want to use mutliple elements 
+
+
+
+// WE CAN ALSO ADD ID, CLASS, ETC INTO THE ELEMENTS 
+
+// NOTE : 
+
+// <h1 id="first" className="firstclass" style={{color: "white", backgroundColor: "black"}}> hello from naman</h1>
+
+//  must wrap the styles inside a single object.
+
+// JSX expects style to be a JavaScript object, and you need double curly braces:
+
+// -----> The outer {} is for embedding JavaScript into JSX.
+
+// -----> The inner {} is the actual object with style properties.
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+// ~~~ Imp stuffs related to JSX ~~~~~~~~~~~~~
+
+
+
+
+// JS objects defined outside, to use them inside jsx, we can put them inside curly braces.  
+const names = "raman"
+
+// we can also use objects desc inside of jsx using the curly braces 
+
+const obj = {
+    age: 23,
+    salary: 50000
+}
+
+
+const styleObj = {
+    color: "white", 
+    backgroundColor: "blue"
+}
+
+const newElement = (
+    // 1. add mutliple elems - wrap them around div or react fragment 
+
+    // 2. we can add id, className to new element child 
+
+    // 3. javascript expressions - use them inside curly braces. 
+
+    // 4. to add styles to the element - we have two ways - separate style.css file - or directly here using two curly braces 
+    // 5. to add inline styles , we use two curly braces and add all of the style attributes then and there -- or define the style object outside of the jsx and then just tap it here inside {} just like we do with other js expresions.
+
+    // 6. to send int value directly inside of jsx, we can use them inside of {23}
+    
+
+
+    <div>
+        <h1 id="first" className="firstclass" > hello from {names}</h1>
+        <h2 style = {styleObj} > learning react with {names} whose age is {obj.age} and is earning {obj.salary} </h2>
+    </div>
+    
+    // OR 
+
+
+    // <>
+    //     <h1> hello from naman</h1>
+    //     <h2> Jsx - adding multiple elems </h2>
+    // </>
+
+
+
+
+
+)
+const ReactRoot2 = ReactDOM.createRoot(document.getElementById("root2"))
+
+ReactRoot2.render(newElement)
+
+
+
