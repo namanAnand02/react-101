@@ -811,7 +811,40 @@ const newElement = // 1. add mutliple elems - wrap them around div or react frag
     columnNumber: 5
 }, undefined);
 const ReactRoot2 = (0, _clientDefault.default).createRoot(document.getElementById("root2"));
-ReactRoot2.render(newElement);
+// ReactRoot2.render(newElement)
+// ~~~~~~~~~~~ lets learn about components in REACT ~~~~~~~~~~~~~~
+// React components are defined in two ways - 
+// ---> 1. class based components : no longer used 
+// ---> 2. Function based components : used today 
+// creating a react component which returns a jsx 
+function greet() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " This is react component."
+    }, void 0, false, {
+        fileName: "lect03.js",
+        lineNumber: 256,
+        columnNumber: 12
+    }, this);
+}
+const newElement6 = greet();
+const Reactroot3 = (0, _clientDefault.default).createRoot(document.getElementById("root3"));
+// now we can render this newElement6 on the page 
+// Reactroot3.render(newElement6)
+// we can also define function based component using arrow function 
+const meet = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+        children: " React component"
+    }, void 0, false, {
+        fileName: "lect03.js",
+        lineNumber: 271,
+        columnNumber: 12
+    }, undefined);
+};
+const newElement7 = meet();
+// render it into root3 
+// Reactroot3.render(newElement7)
+// or we can directly call this function inside this render thingy 
+Reactroot3.render(meet());
 
   $parcel$ReactRefreshHelpers$6e62.postlude(module);
 } finally {

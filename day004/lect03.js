@@ -235,7 +235,49 @@ const newElement = (
 )
 const ReactRoot2 = ReactDOM.createRoot(document.getElementById("root2"))
 
-ReactRoot2.render(newElement)
+// ReactRoot2.render(newElement)
 
 
+
+
+
+// ~~~~~~~~~~~ lets learn about components in REACT ~~~~~~~~~~~~~~
+
+
+
+// React components are defined in two ways - 
+// ---> 1. class based components : no longer used 
+// ---> 2. Function based components : used today 
+
+
+
+// creating a react component which returns a jsx 
+function greet(){
+    return <h1> This is react component.</h1>
+}
+
+
+const newElement6 = greet()
+
+
+const Reactroot3 = ReactDOM.createRoot(document.getElementById("root3"))
+// now we can render this newElement6 on the page 
+
+// Reactroot3.render(newElement6)
+
+
+// we can also define function based component using arrow function 
+const meet = ()=>{
+    return <h2> React component</h2>
+}
+
+const newElement7 = meet()
+
+// render it into root3 
+
+// Reactroot3.render(newElement7)
+
+// or we can directly call this function inside this render thingy 
+
+Reactroot3.render(meet())
 
