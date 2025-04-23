@@ -107,7 +107,11 @@ the ques was how do we send multiple arguments in jsx function calls
 
 
 
+
+
 /*
+
+// ~~~~~~~~~~~~~ More on PROPS ~~~~~~~~~~~~~~~
 
 - props stands for properties 
 - they are used to pass data from a parent component to a child component. 
