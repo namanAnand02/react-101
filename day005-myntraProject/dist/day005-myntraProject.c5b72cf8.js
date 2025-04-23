@@ -798,7 +798,16 @@ function App() {
             display: "flex",
             gap: "10px",
             flexWrap: "wrap"
-        }
+        },
+        children: // this is where we need to insert js expre- only those who yields some result.
+        clothCardArray.map((value, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Card, {
+                clothType: value.clothType,
+                offer: value.offer
+            }, index, false, {
+                fileName: "myntra.js",
+                lineNumber: 99,
+                columnNumber: 53
+            }, this))
     }, void 0, false, {
         fileName: "myntra.js",
         lineNumber: 70,
@@ -809,7 +818,7 @@ _c1 = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "myntra.js",
-    lineNumber: 115,
+    lineNumber: 137,
     columnNumber: 13
 }, undefined));
 var _c, _c1;

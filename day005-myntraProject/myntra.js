@@ -92,7 +92,29 @@ function App(){
             {/* we cant possibly be entering separate datas about all the cards-  */}
             {/* we can store the info about all the cloth card in an array of objects -- and then use map to bring them one by one  */}
             {/* The Better Way: Array + .map() */}
+
+
+            {
+                // this is where we need to insert js expre- only those who yields some result.
+                clothCardArray.map((value, index)=> <Card key = {index} clothType= {value.clothType} offer = {value.offer} />)
+
+                // Map here --> It loops through the clothCardArray and for each object, it returns a Card component with props filled in from that object.
+                // it returns somethinglike this - [<card ../> , <card ../>, <card ../>, <card ../>, <card ../>]
+                // And JSX lets us embed this list directly into our component
+                
+                // NOTE: dont use for loop here - it returns nothing 
+                // .map() returns an array - so we can use it here
+
+                // Why key={index}?
+                // --> we're using .map() on clothCardArray, and we don’t have a unique ID for each item. So index is a safe fallback as long as the list doesn’t change dynamically (like sorting/deleting items). 
+                // --> React needs this key to keep track of each Card when rendering the list.
+
+
+                // in jsx, we can insert any js expr inside {} just that it should return some result.
+            }
             
+
+
         </div>
 
 
